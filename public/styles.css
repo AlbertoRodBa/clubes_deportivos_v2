@@ -1,0 +1,99 @@
+/* styles.css */
+body {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .navbar-brand,
+  .nav-link,
+  .card-header,
+  .card-title,
+  .card-text,
+  .btn {
+    font-family: 'Fira Sans', sans-serif;
+  }
+  
+  footer {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+
+/* Navbar efectos */
+  .navbar {
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 0.5s ease-in-out; /* Transición suave de opacidad */
+  }
+  
+  .navbar-visible {
+    opacity: 1; /* Visible */
+  }
+  
+
+/* Footer efectos */
+footer {
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 0.5s ease-in-out; /* Transición suave de opacidad */
+}
+  
+/* Clase para mostrar el footer */
+.fade-in {
+    opacity: 1; /* Visible */
+}
+
+
+/* Estilo personalizado para el navbar con color blanco crema */
+.bg-cream {
+    background-color: #f5f5dc; /* Color blanco crema */
+}
+
+
+/* Estilos para el navbar */
+.navbar {
+    position: sticky !important;
+    top: 0;
+    background-color: #f5f5dc !important;
+    z-index: 1000 !important;
+}
+
+.footer {
+    display: none; /* Inicialmente oculto */
+  }
+  
+  .footer-visible {
+    display: block; /* Mostrar footer */
+    opacity: 1; /* Para transiciones suaves */
+    transition: opacity 0.5s ease-in-out; /* Transición suave */
+  }
+  
+
+
+  /* texto animado */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-up {
+    opacity: 0; /* Inicialmente oculto */
+    animation: fadeUp 1s forwards; /* Duración de la animación */
+  }
+  
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Estilos para el label con ID específico */
+#label-nombre {
+    letter-spacing: 0.1px; /* Aplica el espaciado deseado */
+}
+
+/* Estilos para el label con ID específico */
+#label-precio {
+    letter-spacing: 0.1px; /* Aplica el espaciado deseado */
+}
