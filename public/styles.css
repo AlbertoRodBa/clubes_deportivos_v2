@@ -97,3 +97,12 @@ footer {
 #label-precio {
     letter-spacing: 0.1px; /* Aplica el espaciado deseado */
 }
+
+/* Estilos de los íconos del Footer */
+.no-underline {
+  text-decoration: none;
+}
+
+.no-underline:hover {
+  text-decoration: none;
+}
