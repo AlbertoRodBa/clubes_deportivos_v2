@@ -1,278 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    <!-- letra -->
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
-
-  
-  <link rel="stylesheet" href="styles.css"> 
-
+  <!-- Letra -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"
     integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
     integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+  <title>Club Deportivo</title>
 </head>
+<body>
+  <!--navbar-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-cream shadow-sm"> <!-- Clase shadow-sm para sombreado -->
+    <a class="navbar-brand ml-3" href="#">
+      <img src="logo.png" height="60" class="d-inline-block align-top" alt="Logo">
+      <span class="ml-3"></span> <!-- Aplicado ml-3 para margen a la izquierda -->
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<!--navbar-->
-<nav class="navbar navbar-expand-lg navbar-light bg-cream shadow-sm"> <!-- Clase shadow-sm para sombreado -->
-  <a class="navbar-brand ml-3" href="#">
-    <img src="logo.png" height="60" class="d-inline-block align-top" alt="Logo">
-    <span class="ml-3"> </span> <!-- Aplicado ml-3 para margen a la izquierda -->
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        
+        <li class="nav-item active">
+          <a class="nav-link font-weight-bold text-muted custom-navbar-text" href="#">CLUBES DEPORTIVOS <span class="sr-only">(current)</span></a>
+        </li>        
+      </ul>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link font-weight-bold text-muted" href="#">CLUBES DEPORTIVOS <span class="sr-only">(current)</span></a>
-      </li>
-    </ul>
-  </div>
+    </div>
   </nav>
 
-
-
-
-
-<div class="container mt-4">
-
-  <h4 class="text-muted text-center mt-1" id="tituloAnimado">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" style="fill: #ce970c";>
-      <path d="M511.8 267.4c-26.1 8.7-53.4 13.8-81 15.1c9.2-105.3-31.5-204.2-103.2-272.4C434.1 41.1 512 139.5 512 256c0 3.8-.1 7.6-.2 11.4zm-3.9 34.7c-5.8 32-17.6 62-34.2 88.7c-97.5 48.5-217.7 42.6-311.9-24.5c23.7-36.2 55.4-67.7 94.5-91.8c79.9 43.2 170.1 50.8 251.6 27.6zm-236-55.5c-2.5-90.9-41.1-172.7-101.9-231.7C196.8 5.2 225.8 0 256 0c2.7 0 5.3 0 7.9 .1c90.8 60.2 145.7 167.2 134.7 282.3c-43.1-2.4-86.4-14.1-126.8-35.9zM138 28.8c20.6 18.3 38.7 39.4 53.7 62.6C95.9 136.1 30.6 220.8 7.3 316.9C2.5 297.4 0 277 0 256C0 157.2 56 71.5 138 28.8zm69.6 90.5c19.5 38.6 31 81.9 32.3 127.7C162.5 294.6 110.9 368.9 90.2 451C66 430.4 45.6 405.4 30.4 377.2c6.7-108.7 71.9-209.9 177.1-257.9zM256 512c-50.7 0-98-14.7-137.8-40.2c5.6-27 14.8-53.1 27.4-77.7C232.2 454.6 338.1 468.8 433 441c-46 44-108.3 71-177 71z"/>
-    </svg>
-    REGISTRE SU DEPORTE Y PRECIO:
-  </h4>
-  
-  <div action="/agregar" class="border rounded p-4">
-    <div class="form-group row">
-      <label class="col-sm-2 col-form-label" id="label-nombre">Nombre del Deporte</label>
-      <div class="col-sm-10">
-        <input id="nombre" type="text" class="form-control" name="nombre" />
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-sm-2 col-form-label" id="label-precio">Precio del Deporte</label>
-      <div class="col-sm-10">
-        <input id="precio" type="text" class="form-control" name="precio" /> <!-- Corregido aquí -->
-      </div>
-    </div>
+  <div class="container mt-4">
+    <h4 class="text-muted text-center mt-1" id="tituloAnimado">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" style="fill: #ce970c;">
+        <path d="M511.8 267.4c-26.1 8.7-53.4 13.8-81 15.1c9.2-105.3-31.5-204.2-103.2-272.4C434.1 41.1 512 139.5 512 256c0 3.8-.1 7.6-.2 11.4zm-3.9 34.7c-5.8 32-17.6 62-34.2 88.7c-97.5 48.5-217.7 42.6-311.9-24.5c23.7-36.2 55.4-67.7 94.5-91.8c79.9 43.2 170.1 50.8 251.6 27.6zm-236-55.5c-2.5-90.9-41.1-172.7-101.9-231.7C196.8 5.2 225.8 0 256 0c2.7 0 5.3 0 7.9 .1c90.8 60.2 145.7 167.2 134.7 282.3c-43.1-2.4-86.4-14.1-126.8-35.9zM138 28.8c20.6 18.3 38.7 39.4 53.7 62.6C95.9 136.1 30.6 220.8 7.3 316.9C2.5 297.4 0 277 0 256C0 157.2 56 71.5 138 28.8zm69.6 90.5c19.5 38.6 31 81.9 32.3 127.7C162.5 294.6 110.9 368.9 90.2 451C66 430.4 45.6 405.4 30.4 377.2c6.7-108.7 71.9-209.9 177.1-257.9zM256 512c-50.7 0-98-14.7-137.8-40.2c5.6-27 14.8-53.1 27.4-77.7C232.2 454.6 338.1 468.8 433 441c-46 44-108.3 71-177 71z"/>
+      </svg>
+      REGISTRE SU DEPORTE Y PRECIO:
+    </h4>
     
-    <div class="form-group row">
-      <div class="col-sm-12">
-        <button class="btn btn-dark mr-2" style="width: 10rem;" onclick="agregar()">Agregar</button>
+    <div action="/agregar" class="border rounded p-4">
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label" id="label-nombre">Nombre del Deporte</label>
+        <div class="col-sm-10">
+          <input id="nombre" type="text" class="form-control" name="nombre" />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label" id="label-precio">Precio del Deporte</label>
+        <div class="col-sm-10">
+          <input id="precio" type="text" class="form-control" name="precio" />
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <div class="col-sm-12">
+          <button class="btn btn-dark mr-2" style="width: 10rem;" onclick="agregar()">Agregar</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<h5 class="text-center my-4 text-muted">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" style="fill: #ce970c">
-    <path d="M152.1 38.2c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 113C-2.3 103.6-2.3 88.4 7 79s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zm0 160c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 273c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zM224 96c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32zm0 160c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32zM160 416c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H192c-17.7 0-32-14.3-32-32zM48 368a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
-  </svg>
-  TABLA DE DEPORTES
-</h5>
+  <h5 class="text-center my-4 text-muted">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" style="fill: #ce970c;">
+      <path d="M152.1 38.2c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 113C-2.3 103.6-2.3 88.4 7 79s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zm0 160c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 273c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zM224 96c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32zm0 160c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32zM160 416c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H192c-17.7 0-32-14.3-32-32zM48 368a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
+    </svg>
+    TABLA DE DEPORTES
+  </h5>
 
-<div class="container mt-2">
-  <div class="row">
-    <div class="col-md-8">
-      <table class="table w-100 border">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Precio</th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody id="cuerpo"></tbody>
-      </table>
-    </div>
-    <div class="col-md-4 d-none d-md-flex align-items-center justify-content-center">
-      <img src="deportes-tablav2.jpg" alt="Descripción de la imagen" class="img-fluid">
+  <div class="container mt-2">
+    <div class="row">
+      <div class="col-md-8">
+        <table class="table w-100 border">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Precio</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody id="cuerpo"></tbody>
+        </table>
+      </div>
+      <div class="col-md-4 d-none d-md-flex align-items-center justify-content-center">
+        <img src="deportes-tablav2.jpg" alt="Descripción de la imagen" class="img-fluid">
+      </div>
     </div>
   </div>
-</div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="row">
-        <div class="col-md-6 p-4">
-          <form>
-            <!-- Ocultar el campo de nombre -->
-            <input type="hidden" id="nombreModal" name="nombre">
-            <div class="form-group row">
-              <label class="col-sm-2 col-form-label ml-1">Precio</label>
-              <div class="col-sm-10">
-                <input id="precioModal" type="text" class="form-control" name="precio" />
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="row">
+          <div class="col-md-6 p-4">
+            <form>
+              <!-- Ocultar el campo de nombre -->
+              <input type="hidden" id="nombreModal" name="nombre">
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label ml-1">Precio</label>
+                <div class="col-sm-10">
+                  <input id="precioModal" type="text" class="form-control" name="precio" />
+                </div>
               </div>
-            </div>
-            <button type="button" class="btn btn-warning" onclick="edit()">Editar</button>
-            <button type="button" class="btn btn-dark" onclick="eliminar()">Eliminar</button>
-          </form>
-        </div>
-        <div class="col-md-6 d-none d-md-flex align-items-center justify-content-center">
-          <img src="imagen-modal-v2.jpg" width="190" alt="Descripción de la imagen" class="img-fluid">
+              <button type="button" class="btn btn-warning" onclick="edit()">Editar</button>
+              <button type="button" class="btn btn-dark" onclick="eliminar()">Eliminar</button>
+            </form>
+          </div>
+          <div class="col-md-6 d-none d-md-flex align-items-center justify-content-center">
+            <img src="imagen-modal-v2.jpg" width="190" alt="Descripción de la imagen" class="img-fluid">
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
+  <!-- Footer -->
+  <footer class="footer bg-dark text-white text-center py-3 mt-5">
+    <p>Clubes deportivos 2024 | Todos los derechos reservados</p>
+    <div>
+      <a href="https://www.instagram.com" target="_blank" class="text-white mx-2 no-underline">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.youtube.com" target="_blank" class="text-white mx-2 no-underline">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://www.facebook.com" target="_blank" class="text-white mx-2 no-underline">
+        <i class="fab fa-facebook"></i>
+      </a>
+      <a href="https://www.twitter.com" target="_blank" class="text-white mx-2 no-underline">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://www.linkedin.com" target="_blank" class="text-white mx-2 no-underline">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+  </footer>
 
-<!-- Footer -->
-<footer class="footer bg-dark text-white text-center py-3 mt-5">
-  <p>Clubes deportivos 2024 | Todos los derechos reservados</p>
-  <div>
-    <a href="https://www.instagram.com" target="_blank" class="text-white mx-2 no-underline">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://www.youtube.com" target="_blank" class="text-white mx-2 no-underline">
-      <i class="fab fa-youtube"></i>
-    </a>
-    <a href="https://www.facebook.com" target="_blank" class="text-white mx-2 no-underline">
-      <i class="fab fa-facebook"></i>
-    </a>
-    <a href="https://www.twitter.com" target="_blank" class="text-white mx-2 no-underline">
-      <i class="fab fa-twitter"></i>
-    </a>
-    <a href="https://www.linkedin.com" target="_blank" class="text-white mx-2 no-underline">
-      <i class="fab fa-linkedin"></i>
-    </a>
-  </div>
-</footer>
-
-
-
-
-
-<script>
-  $(document).ready(function () {
-    getData()
-  })
-
-  function getData() {
-    $('#cuerpo').html('')
-    axios.get('/deportes').then((data) => {
-      let deportes = data.data.deportes
-      deportes.forEach((d, i) => {
-        $('#cuerpo').append(`
-        <tr>
-          <th scope="row">${i + 1}</th>
-          <td>${d.nombre}</td>
-          <td>${d.precio}</td>
-          <td>
-            <button class="btn btn-warning" onclick='preEdit("${d.nombre}","${d.precio}")' data-toggle="modal" data-target="#exampleModal">Editar</button>
-            <button class="btn btn-dark" onclick='preEliminar("${d.nombre}")' data-toggle="modal" data-target="#exampleModal">Eliminar</button>
-          </td>
-        </tr>
-        `)
-      })
-    })
-  }
-
-  function preEdit(nombre, precio) {
-    $('#nombreModal').val(nombre)
-    $('#precioModal').val(precio)
-  }
-
-
-
-
-
-
-
-
-  function agregar() {
-  let nombre = $('#nombre').val().trim(); // Obtener el valor del nombre y eliminar espacios en blanco
-  let precio = $('#precio').val().trim(); // Obtener el valor del precio y eliminar espacios en blanco
-
-  // Verificar que los campos no estén vacíos
-  if (nombre === '' || precio === '') {
-    alert('Por favor, complete todos los campos.');
-    return;
-  }
-
-  axios.get(`/agregar?nombre=${nombre}&precio=${precio}`).then((data) => {
-    alert(data.data);
-    getData();
-  });
-  $('#exampleModal').modal('hide');
-}
-
-function edit() {
-  let nuevoNombre = $('#nombreModal').val().trim(); // Nuevo nombre a editar (ya no se usa)
-  let nuevoPrecio = $('#precioModal').val().trim(); // Nuevo precio a editar
-
-  // Verificar que el precio no esté vacío
-  if (nuevoPrecio === '') {
-    alert('Por favor, ingrese un precio válido.');
-    return;
-  }
-
-  axios.get(`/editar?nombre=${nuevoNombre}&nuevoPrecio=${nuevoPrecio}`).then(response => {
-    alert(response.data);
-    getData(); // Actualizar la tabla después de editar
-  }).catch(error => {
-    console.error(error);
-    alert('Error al intentar editar el deporte');
-  });
-
-  $('#exampleModal').modal('hide'); // Ocultar el modal después de enviar la solicitud
-}
-
-
-
-
-
-
-
-  function preEliminar(nombre) {
-    $('#nombreModal').val(nombre)
-    $('#precioModal').val('')
-  }
-
-  function eliminar() {
-    let nombre = $('#nombreModal').val()
-    axios.get(`/eliminar?nombre=${nombre}`).then((data) => {
-      alert(data.data)
-      getData()
-    })
-    $('#exampleModal').modal('hide')
-  }
-
-
-   // navbar
-   document.addEventListener('DOMContentLoaded', function() {
-    const navbar = document.querySelector('.navbar');
-    navbar.classList.add('navbar-visible');
-  });
-//footer
-document.addEventListener('DOMContentLoaded', function() {
-  const footer = document.querySelector('.footer');
-  footer.classList.add('footer-visible');
-});
-
-// titulo animado
-document.addEventListener('DOMContentLoaded', function() {
-  const tituloAnimado = document.getElementById('tituloAnimado');
-  tituloAnimado.classList.add('fade-up');
-});
-
-
-</script>
+  <script src="js/sports.js"></script> <!-- sports.js -->
+</body>
+</html>
